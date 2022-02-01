@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name='viewport' content="width=device-width">
+        <title>an epic!</title>
+        <style>
+            img {
+                position: fixed;
+            }
+        </style>
+    </head>
+    <body>
+        <img alt="sponge" width="240" height="240" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fthumb%2F3%2F3b%2FSpongeBob_SquarePants_character.svg%2F1200px-SpongeBob_SquarePants_character.svg.png&f=1&nofb=1">
+        <script>
+            const img = document.querySelector('img');
+            let h3LeftDistance = 0;
+            let imgTopDistance = 0;
+            img.style.left = h3LeftDistance + 'px';
+            img.style.top = h3LeftDistance + 'px';
+
+            document.addEventListener('keydown', event => {
+                if (event.key === 'ArrowRight') {
+                    h3LeftDistance += 5;
+                    img.style.left = h3LeftDistance + 'px';
+                }
+                else if (event.key === 'ArrowLeft') {
+                    h3LeftDistance -= 5;
+                    img.style.left = h3LeftDistance + 'px';
+                }
+                else if (event.key === 'ArrowUp') {
+                    imgTopDistance -= 5;
+                    img.style.top = imgTopDistance + 'px';
+                }
+                else if (event.key === 'ArrowDown') {
+                    imgTopDistance += 5;
+                    img.style.top = imgTopDistance + 'px';
+                }
+            });
+        </script>
+    </body>
+</html>
