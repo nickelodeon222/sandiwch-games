@@ -23,51 +23,28 @@
             document.onkeydown = document.onkeyup = e => {
                 e = e || event;
                 map[e.key] = e.type === "keydown";
+
+                if (e.type === 'keyup') {
+                    delete map[e.key];
+                }
+
             };
-            
-            setInterval(function() {
-                if (map.ArrowRight && map.ArrowUp) {
-                    h3LeftDistance += 5;
-                    img.style.left = h3LeftDistance + 'px';
 
-                    imgTopDistance -= 5;
-                    img.style.top = imgTopDistance + 'px';
-                }
-                else if (map.ArrowRight && map.ArrowDown) {
-                    h3LeftDistance += 5;
-                    img.style.left = h3LeftDistance + 'px';
-
-                    imgTopDistance += 5;
-                    img.style.top = imgTopDistance + 'px';
-                }
-                else if (map.ArrowLeft && map.ArrowUp) {
-                    h3LeftDistance -= 5;
-                    img.style.left = h3LeftDistance + 'px';
-
-                    imgTopDistance -= 5;
-                    img.style.top = imgTopDistance + 'px';
-                }
-                else if (map.ArrowLeft && map.ArrowDown) {
-                    h3LeftDistance -= 5;
-                    img.style.left = h3LeftDistance + 'px';
-
-                    imgTopDistance += 5;
-                    img.style.top = imgTopDistance + 'px';
-                }
-                else if (map.ArrowRight) {
+            setInterval(() => {
+                if (map.ArrowRight) {
                     h3LeftDistance += 5;
                     img.style.left = h3LeftDistance + 'px';
                 }
                 
-                else if (map.ArrowLeft) {
+                if (map.ArrowLeft) {
                     h3LeftDistance -= 5;
                     img.style.left = h3LeftDistance + 'px';
                 }
-                else if (map.ArrowUp) {
+                if (map.ArrowUp) {
                     imgTopDistance -= 5;
                     img.style.top = imgTopDistance + 'px';
                 }
-                else if (map.ArrowDown) {
+                if (map.ArrowDown) {
                     imgTopDistance += 5;
                     img.style.top = imgTopDistance + 'px';
                 }
