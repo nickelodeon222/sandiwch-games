@@ -68,11 +68,11 @@ let yVel = 0;
 function gameLoop(time) {
     // If something is happening, run this
     if (Object.keys(keyPressed) || rect.y > 0) {
-        if ((keyPressed['arrowup'] || keyPressed['w'] || keyPressed[' ']) && !rect.y > 0) yVel += 15;
+        if ((keyPressed['ArrowUp'] || keyPressed['KeyW'] || keyPressed['Space']) && !rect.y > 0) yVel += 15;
 
-        if (keyPressed['arrowright'] || keyPressed['d']) rect.x += 20;
+        if (keyPressed['ArrowRight'] || keyPressed['KeyD']) rect.x += 20;
     
-        if (keyPressed['arrowleft'] || keyPressed['a']) rect.x -= 20;
+        if (keyPressed['arrowleft'] || keyPressed['KeyA']) rect.x -= 20;
     
         rect.y += yVel;
     
@@ -117,7 +117,7 @@ function draw() {
 
 /**@param {KeyboardEvent} ev */
 function handleKeyPresses(ev) {
-    keyPressed[ev.key.toLowerCase()] = ev.type === 'keydown';
+    keyPressed[ev.code] = ev.type === 'keydown';
     
     if (ev.type === 'keyup') delete keyPressed[ev.key];
 }
