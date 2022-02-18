@@ -38,16 +38,16 @@ export function createProgram(gl, vertexShader, fragmentShader) {
 
 export function resizeCanvasToDisplaySize(canvas) {
     // Lookup the size the browser is displaying the canvas in CSS pixels.
-    const displayWidth  = canvas.clientWidth;
+    const displayWidth = canvas.clientWidth;
     const displayHeight = canvas.clientHeight;
    
     // Check if the canvas is not the same size.
-    const needResize = canvas.width  !== displayWidth ||
+    const needResize = canvas.width !== displayWidth ||
                        canvas.height !== displayHeight;
    
     if (needResize) {
       // Make the canvas the same size
-      canvas.width  = displayWidth;
+      canvas.width = displayWidth;
       canvas.height = displayHeight;
     }
    
@@ -76,15 +76,10 @@ export function resizeCanvasToWindow(canvas) {
 }
 
 export function setRectangle(gl, x, y, width, height) {
-    var x1 = x;
-    var x2 = x + width;
-    var y1 = y;
-    var y2 = y + height;
-   
-    // NOTE: gl.bufferData(gl.ARRAY_BUFFER, ...) will affect
-    // whatever buffer is bound to the `ARRAY_BUFFER` bind point
-    // but so far we only have one buffer. If we had more than one
-    // buffer we'd want to bind that buffer to `ARRAY_BUFFER` first.
+    const x1 = x;
+    const x2 = x + width;
+    const y1 = y;
+    const y2 = y + height;
    
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
        x1, y1,
