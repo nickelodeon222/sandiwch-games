@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>talk to minion</title>
+    </head>
+    <body>
+        <img src="minion.jpg" width="250" height="300">
+        <br>
+        <input placeholder="what do you say to the minion?">
+        <button>say!</button>
+        <script>
+            document.addEventListener("keydown", ev => {
+                if (ev.code === 'Enter') {
+                    speakToMinion()
+                }
+            });
+
+            document.querySelector("button").addEventListener("click", speakToMinion)
+
+            function speakToMinion() {
+                const yourMessage = document.createElement("h3");
+                yourMessage.innerHTML = "You: " + document.querySelector("input").value;
+
+                const minionMessage = document.createElement("h3");
+                minionMessage.innerHTML = 'Minion: what\'s popping?'
+
+                document.body.appendChild(yourMessage);
+                document.body.appendChild(minionMessage);
+            }
+        </script>
+    </body>
+</html>
