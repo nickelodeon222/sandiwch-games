@@ -72,7 +72,7 @@ function gameLoop(time) {
 
         if (keyPressed['ArrowRight'] || keyPressed['KeyD']) rect.x += 20;
     
-        if (keyPressed['arrowleft'] || keyPressed['KeyA']) rect.x -= 20;
+        if (keyPressed['ArrowLeft'] || keyPressed['KeyA']) rect.x -= 20;
     
         rect.y += yVel;
     
