@@ -10,6 +10,7 @@
         <br>
         <input placeholder="what do you say to the minion?">
         <button>say!</button>
+        <div></div>
         <script>
             document.addEventListener("keydown", ev => {
                 if (ev.code === 'Enter') {
@@ -26,8 +27,8 @@
                 const minionMessage = document.createElement("h3");
                 minionMessage.innerHTML = 'Minion: what\'s popping?'
 
-                document.body.appendChild(yourMessage);
-                document.body.appendChild(minionMessage);
+                document.querySelector("div").appendChild(yourMessage);
+                document.querySelector("div").appendChild(minionMessage);
             }
         </script>
     </body>
