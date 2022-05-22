@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>fucj</title>
+        <style>
+            h3 {
+                user-select: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h3 id="a" style="font-size: 500%;"></p>
+
+        <script>
+
+            let h = 0;
+            document.body.style.backgroundColor = `hsl(${h}, 50%, 50%)`
+            window.addEventListener("mousedown", ev => {
+                if (ev.button == 0)
+                document.getElementById('a').innerHTML = "it's been a year daddy"
+
+                document.body.style.backgroundColor = `hsl(${h}, 50%, 50%)`
+                h += 10;
+            })
+
+            window.addEventListener("mouseup", ev => {
+                if (ev.button == 0)
+                document.getElementById('a').innerHTML = ""
+            })
+
+            setInterval(() => {
+                console.log('a')
+            }, 10)
+        </script>
+    </body>
+</html>
